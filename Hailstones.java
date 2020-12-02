@@ -10,31 +10,31 @@ public class Hailstones {
 
     public static void main(String args[]) {
         // The code block below requests a number from the user.
-        // Since we're using integers, I used scanner.nextInt() and an integer number variable
-        // to store the user's value.
+        // Since we're using integers, I used scanner.nextInt() and an integer number variable to store the user's value.
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
             System.out.println("Welcome to Hailstones.");
-            System.out.println("Please enter a whole number: " + number);
+            System.out.println("The number you entered is: " + number);
 
      // steps is a variable that will store the number of lines it took to get to 1.
     int steps = 0;
 
-    // I thought a while loop would be appropriate here so that the program keeps on going until
-    // it stops when it finds 1.
+    // A while loop would keep the program going until it reaches 1 where it stops.
     while(number != 1) {
         if (number % 2 == 0)    { // An even number has a remainder of 0.
-            System.out.println(number + " is even, so I take half: " + number/2); // The program would initially begin
-         // with the user's even value and then altered to a new halved value that it would use again in the next loop.
+            number/= 2;
+            // User enters a value which can be even or odd.
+            // If even, a new halved value is obtained which it would use again in the loop.
+            System.out.println(number + " is even, so I take half. " + "\t");
         } else { // The user inputted an odd number
-            number = (number*3) + (number + 1);
-            System.out.println(number + " is odd, so I make 3n+1: " + number); // The program would initially begin
-            // with the user's odd value and then altered to a new value that it would use again in the next loop.
+            number = (number*3) + 1;
+            // If odd, a new value is obtained by multiply it by 3 then adding 1 which it would use again in the loop.
+            System.out.println(number + " is odd, so I make 3n+1. " + "\t");
 
         }
         steps++; // After every line the counter would increase until it stops when the number reaches 1.
-        System.out.println("It took " + steps + " steps to reach 1.");
         }
-    }    
-    }
+    System.out.println("It took " + steps + " steps to reach 1.");    
+   }    
+}
        
